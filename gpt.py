@@ -39,4 +39,4 @@ def meeting_note_generation(id,testo):
     print("Meeting note generata e salvata nel file 'meeting_note.txt'")
     return meeting_note
 
-openai.api_key = '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'
+openai.api_key = 'insert your apikey'

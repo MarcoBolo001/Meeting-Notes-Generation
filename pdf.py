@@ -20,7 +20,7 @@ def pdf_generation(file_path):
     conn = http.client.HTTPSConnection("us1.pdfgeneratorapi.com")
 
     # id value del template
-    id_value = "956191"
+    id_value = "id del template"
     # Nomi delle sezioni come delimitatori, assicurati che corrispondano esattamente a quelli nel file
     section_names = [
         "Meeting Title:",
@@ -92,12 +92,12 @@ def pdf_generation(file_path):
     payload_json = json.dumps(payload)
 
     # parte relativa alla generazione del token JWT
-    secret_key = "c900dec1869a22e1ffb806b0f93e94ade5d4e1d2207ca7c3a5376ecc48110685"     #inserire il segreto
+    secret_key = "insert your secret key"     #inserire il segreto
 
     # Definisci il payload del JWT
     authentication_payload = {
-        "iss": "a602d4f8c0fb5590f7e02e884d5093310ccfdea719aff3f28713e5d395b6fe1c", #inserire apikei
-        "sub": "rana.rospo2001.mb@gmail.com",
+        "iss": "insert your apikey", #inserire apikei
+        "sub": "insert your email",
         "exp": 83738594538954783
     }
 
@@ -112,7 +112,7 @@ def pdf_generation(file_path):
     }
 
     # chiamata post alle api di pdfgenerationapi
-
+                                                      #template id
     conn.request("POST", "/api/v3/templates/956191/output?name=My%20document&format=pdf&output=base64",
                  payload_json, headers)
     res = conn.getresponse()
